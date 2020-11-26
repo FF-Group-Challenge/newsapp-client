@@ -20,11 +20,11 @@ function nationalNews() {
   $('#content').empty()
 
   $.getJSON('/example/cnn.json', function (data) {
-    // console.log(data.data);
+    console.log(data.data);
 		const news = data.data;
 		for (let i = 0; i < news.length; i++) {
 			console.log(news[i]);
-			$('#test').append(`<div class="card" style="width: 18rem;">
+			$('#content').append(`<br><div class="card" style="width: 18rem;">
 						<img class="card-img-top" src="${news[i].poster}" alt="Card image cap">
 						<div class="card-body">
 							<h5 class="card-title"></h5>

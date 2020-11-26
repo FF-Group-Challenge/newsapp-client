@@ -79,3 +79,10 @@ function spaceNews() {
     }
 	});
 }
+
+function logout() {
+  localStorage.clear()
+  $('#main-page').hide()
+  $('#login-page').show()
+  $('#formregister').hide()
+}

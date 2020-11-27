@@ -35,6 +35,7 @@ $('#formregister').on('submit', e => {
         .done (msg => {
             localStorage.setItem('access_token', msg.access_token)
             homepage()
+            homePageNews()
         })
         .fail((xhr, textStatus) => {
             const errorLog = xhr
@@ -76,6 +77,7 @@ $('#formlogin').on('submit', e => {
         .done (msg => {
             localStorage.setItem('access_token', msg.access_token)
             homepage()
+            homePageNews()
         })
         .fail((xhr, textStatus) => {
             console.log(xhr)
@@ -106,6 +108,7 @@ function onSignIn(googleUser) {
             console.log(msg)
             localStorage.setItem('access_token', msg.access_token)
             homepage()
+            homePageNews()
         })
         .fail((xhr, textStatus) => {
             const errorLog = xhr

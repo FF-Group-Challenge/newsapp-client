@@ -1,5 +1,6 @@
 function landing () {
     //show login form
+    $('#landing').show()
     $('#formlogin').show(0,_=> {
         $('#slog')
         .on('click', _=> {
@@ -78,7 +79,8 @@ $('#formlogin').on('submit', e => {
             homepage()
         })
         .fail((xhr, textStatus) => {
-            console.log(xhr)
+            $('#error-log').append(`<small id="errmes" class="form-text text-danger mb-2 ml-1">${xhr.responseJSON.message}</small>`)
+            console.log(xhr.responseJSON.message)
         })
         .always(_=> {
             $('#emaillog').val('')

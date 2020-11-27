@@ -1,0 +1,33 @@
+{
+  "status": "ok",
+  "totalResults": 38,
+  "articles": 
+  [
+    {
+      "source": {
+        "id": "usa-today",
+        "name": "USA Today"
+      },
+      "author": "Jessica Flores, Ryan W. Miller",
+      "title": "Coronavirus updates: Thanksgiving parade goes on  without crowds; Supreme Court blocks NY worship  restrictions; CDC projects 321K deaths - USA TODAY",
+      "description": "The Macy's Thanksgiving Day Parade marches  on, but the balloons are distancing. New CDC report says the   US misses 8 virus cases for every one counted.",
+      "url": "https://www.usatoday.com/story/news/health/2020/11/26/covid-news-cdc-joe-biden-los-angeles-coronavirus/6427266002/",
+      "urlToImage": "https://www.gannett-cdn.com/presto/2020/11/26/USAT/024d141b-2e07-41b8-b8bc-ef2feba85216-AP_Macys_Thanksgiving_Parade.jpg?crop=1023,575,x1,y70&width=1600&height=800&fit=bounds",
+      "publishedAt": "2020-11-26T12:00:00Z",
+      "content": "AZD1222 is AstraZeneca's newest COVID-19 vaccine  candidate, but here is how it differs from the previous two. \r\nUSA TODAY\r\nLike pretty much everything in 2020,  Thanksgiving is looking a lot different … [+10868 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Euronews"
+      },
+      "author": null,
+      "title": "AstraZeneca reveals dosing mistake in coronavirus   vaccine trials - Euronews",
+      "description": "A dosing error may have contributed to the  \"highly effective\" results of the AstraZeneca and Oxford   University coronavirus vaccine.",
+      "url": "https://www.euronews.com/2020/11/26/astrazeneca-reveals-dosing-mistake-in-coronavirus-vaccine-trials",
+      "urlToImage": "https://static.euronews.com/articles/stories/05/15/32/58/1000x563_cmsv2_7367112e-0bad-579d-8cfb-6d9a9b7c3415-5153258.jpg",
+      "publishedAt": "2020-11-26T11:39:25Z",
+      "content": null
+    }
+  ]
+} 

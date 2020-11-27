@@ -169,6 +169,11 @@ function spaceNews() {
 function logout() {
 	localStorage.clear()
 	signOut()
+
+	$('#content').empty()
+	$('#content_title').empty()
+	$('#content_title').append('<h1>Choose Your News?</h1><br>')
+
   $('#main-page').hide()
   $('#login-page').show()
   $('#formregister').hide()

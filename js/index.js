@@ -17,8 +17,9 @@ function homepage() {
 }
 
 function nationalNews() {
-  $('#content').empty()
-
+	$('#content').empty()
+	$("#content_title").empty()
+	$('#content_title').append(`<h1>What's Happening in Indonesia?</h1><br>`)
   $.getJSON('/example/cnn.json', function (data) {
     // console.log(data.data);
 		const news = data.data;
@@ -39,8 +40,9 @@ function nationalNews() {
 }
 
 function globalNews() {
-  $('#content').empty()
-
+	$('#content').empty()
+	$("#content_title").empty()
+	$('#content_title').append(`<h1>What's Happening in Our Earth?</h1><br>`)
   $.getJSON('/example/global.json', function (data) {
     console.log(data.articles);
 		for(let i = 0; i < data.articles.length; i++) {
@@ -60,8 +62,9 @@ function globalNews() {
 }
 
 function spaceNews() {
-  $('#content').empty()
-
+	$('#content').empty()
+	$("#content_title").empty()
+	$('#content_title').append(`<h1>What's Happening in Our Space?</h1><br>`)
   $.getJSON('/example/space.json', function (data) {
     console.log(data);
 		for(let i = 0; i < data.length; i++) {

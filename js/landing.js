@@ -38,21 +38,8 @@ $('#formregister').on('submit', e => {
             homepage()
         })
         .fail((xhr, textStatus) => {
-            const errorLog = xhr
-                                .responseJSON
-                                .errors
-                                .map(el => el.message)
-                               
-            errorLog.forEach( el => {
-                $('#errorlog').append(
-                    `<small id="errmes" class="form-text text-danger">${el}</small>`
-                )                    
-            })                   
-            // alert(errorLog)
-            console.log(xhr
-                .responseJSON
-                .errors[0]
-                .message)
+            console.log(xhr)
+            $('#errorlog').append(`<small id="errmes" class="form-text text-danger mb-2 ml-1">${xhr.responseJSON.message}</small>`)
         })
         .always(_=> {
             $('#namereg').val('')

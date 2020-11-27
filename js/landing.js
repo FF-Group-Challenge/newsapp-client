@@ -1,5 +1,6 @@
 function landing () {
     //show login form
+    $('#landing').show()
     $('#formlogin').show(0,_=> {
         $('#slog')
         .on('click', _=> {
@@ -21,6 +22,7 @@ function landing () {
 $('#formregister').on('submit', e => {
     $('#errorlog').empty()
     e.preventDefault()
+    $('#errorlog').empty()
     const data = {
                     name: $('#namereg').val(),
                     email: $('#emailreg').val(),
@@ -38,21 +40,16 @@ $('#formregister').on('submit', e => {
             homePageNews()
         })
         .fail((xhr, textStatus) => {
-            const errorLog = xhr
-                                .responseJSON
-                                .errors
-                                .map(el => el.message)
-                               
-            errorLog.forEach( el => {
-                $('#errorlog').append(
-                    `<small id="errmes" class="form-text text-danger">${el}</small>`
-                )                    
-            })                   
-            // alert(errorLog)
-            console.log(xhr
-                .responseJSON
-                .errors[0]
-                .message)
+            console.log(xhr)
+            const errorlog = xhr
+                            .responseJSON
+                            .message
+                            
+            console.log(errorlog)
+            errorlog.forEach( el => {
+                console.log(el)
+                $('#errorlog').append(`<small id="errmes" class="form-text text-danger mb-2 ml-1">${el}</small>`)
+            })
         })
         .always(_=> {
             $('#namereg').val('')
@@ -64,6 +61,7 @@ $('#formregister').on('submit', e => {
 //login user
 $('#formlogin').on('submit', e => {
     e.preventDefault()
+    $('#error-log').empty()
     const data = {
                     email: $('#emaillog').val(),
                     password: $('#passwordlog').val()
@@ -80,7 +78,8 @@ $('#formlogin').on('submit', e => {
             homePageNews()
         })
         .fail((xhr, textStatus) => {
-            console.log(xhr)
+            $('#error-log').append(`<small id="errmes" class="form-text text-danger mb-2 ml-1">${xhr.responseJSON.message}</small>`)
+            console.log(xhr.responseJSON.message)
         })
         .always(_=> {
             $('#emaillog').val('')

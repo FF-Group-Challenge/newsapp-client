@@ -174,10 +174,10 @@ function logout() {
 	$('#content_title').empty()
 	$('#content_title').append('<h1>Choose Your News?</h1><br>')
 
+  $('#landing').show()
   $('#main-page').hide()
   $('#login-page').show()
-	$('#formregister').hide()
-	$('#landing').show()
+  $('#formregister').hide()
   $('#formlogin').show()
 }
 

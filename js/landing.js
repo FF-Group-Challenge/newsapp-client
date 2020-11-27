@@ -93,14 +93,17 @@ $('#homepage').hide()
 
 
 function onSignIn(googleUser) {
-    const id_token = googleUser.getAuthResponse().id_token;
+    const googleToken = googleUser.getAuthResponse().id_token;
 
     $.ajax({
         method: "POST",
-        url: "http://localhost:3000/googlelogin",
-        data: id_token
+        url: "http://localhost:3000/google-login",
+        data: {
+            googleToken
+        }
         })
         .done (msg => {
+            console.log(msg)
             localStorage.setItem('access_token', msg.access_token)
             homepage()
         })

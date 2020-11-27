@@ -50,7 +50,7 @@ function nationalNews() {
 		const news = data.data;
 		for (let i = 0; i < news.length; i++) {
 			// console.log(news[i]);
-			$('#content').append(`<br><div class="card mr-1 ml-1 mt-1 mb-1" style="width: 16rem;">
+			$('#content').append(`<br><div class="card mx-3 my-1" style="width: 16rem;">
 						<img class="card-img-top" src="${news[i].poster}" alt="Card image cap">
 						<div class="card-body">
 							<h5 class="card-title">${news[i].judul}</h5>
@@ -100,7 +100,7 @@ function globalNews() {
 		console.log(data.articles);
 		for(let i = 0; i < data.articles.length; i++) {
       const news = data.articles[i]
-      $('#content').append(`<br><div class="card mr-1 ml-1 mt-1 mb-1" style="width: 16rem;">
+      $('#content').append(`<br><div class="card mx-3 my-1" style="width: 16rem;">
 						<img class="card-img-top" src="${news.urlToImage}" alt="Card image cap">
 						<div class="card-body">
 							<h5 class="card-title">${news.title}</h5>
@@ -149,7 +149,7 @@ function spaceNews() {
 		console.log(data);
 		for(let i = 0; i < data.length; i++) {
       const news = data[i]
-      $('#content').append(`<br><div class="card mr-1 ml-1 mt-1 mb-1" style="width: 16rem;">
+      $('#content').append(`<br><div class="card mx-3 my-1" style="width: 16rem;">
 						<img class="card-img-top" src="${news.imageUrl}" alt="Card image cap">
 						<div class="card-body">
 							<h5 class="card-title">${news.title}</h5>
@@ -183,6 +183,8 @@ function logout() {
 
 function homePageNews() {
 	$('#content').empty()
+	$('#content_title').empty()
+	$('#content_title').append('<h1>Choose Your News?</h1><br>')
 	$.ajax({
 		url: 'http://localhost:3000/news-space',
 		method: 'GET',
@@ -193,7 +195,7 @@ function homePageNews() {
 	.done((data) => {
 		console.log(data);
       const news = data[0]
-			$('#content').append(`<br><div class="card mr-1 ml-1 mt-1 mb-1" style="width: 16rem;">
+			$('#content').append(`<br><div class="card mx-3 my-1" style="width: 16rem;">
 						<h4 class="row justify-content-md-center">Top Space News</h4>
 						<img class="card-img-top" src="${news.imageUrl}" alt="Card image cap">
 						<div class="card-body">
@@ -220,7 +222,7 @@ function homePageNews() {
 	.done((data) => {
 		console.log(data.articles);
       const news = data.articles[0]
-			$('#content').append(`<br><div class="card mr-1 ml-1 mt-1 mb-1" style="width: 16rem;">
+			$('#content').append(`<br><div class="card mx-3 my-1" style="width: 16rem;">
 						<h4 class="row justify-content-md-center">Top Global News</h4>
 						<img class="card-img-top" src="${news.urlToImage}" alt="Card image cap">
 						<div class="card-body">
@@ -247,7 +249,7 @@ function homePageNews() {
 	.done((data) => {
 		console.log(data)
 		const news = data.data;
-			$('#content').append(`<br><div class="card mr-1 ml-1 mt-1 mb-1" style="width: 16rem;">
+			$('#content').append(`<br><div class="card mx-3 my-1" style="width: 16rem;">
 						<h4 class="row justify-content-md-center">Top National News</h4>
 						<img class="card-img-top" src="${news[0].poster}" alt="Card image cap">
 						<div class="card-body">

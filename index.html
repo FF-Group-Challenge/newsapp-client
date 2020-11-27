@@ -9,7 +9,7 @@
 		<script src="https://apis.google.com/js/platform.js" async defer></script>
 		<title>News App</title>
 	</head>
-	<body>
+	<body class="bg-transparent">
 		<!-- LOGIN PAGE -->
 		<div id="login-page">
 		<div class="container">
@@ -25,17 +25,17 @@
 					  <form id="formlogin">
 						<div class="form-group">
 						  <label for="emaillog">Email address</label>
-						  <input type="email" class="form-control" id="emaillog">
+						  <input type="email" class="shadow form-control" id="emaillog">
 						</div>
 						<div class="form-group">
-						  <label for="passwordlog">Password</label>
-						  <input type="password" class="form-control" id="passwordlog">
+              <label for="passwordlog">Password</label>
+						  <input type="password" class="shadow form-control" id="passwordlog">
 						</div>
 						<div id="error-log">
 						</div>
-						<button type="submit" class="btn btn-primary">Login</button>
-						<button type="button" class="btn btn-danger" id="slog">I Don't Have an Account</button>
-						<small id="logpref" class="form-text text-muted text-center mt-2 mb-3">- or login with your google account -</small>
+						<button type="submit" class="shadow btn btn-primary">Login</button>
+						<button type="button" class="shadow btn btn-danger" id="slog">I Don't Have an Account</button>
+						<small id="logpref" class="shadow form-text text-white text-center mt-2 mb-3">- or login with your google account -</small>
 						<div class="g-signin2 mt-3" data-onsuccess="onSignIn"></div>
 					  </form>
 					  
@@ -57,7 +57,7 @@
 						<div id="errorlog">
 						</div>
 						<small id="logpref" class="form-text text-muted text-center mt-2 mb-3">- or login with your google account -</small>
-						<div class="g-signin2 mt-3" data-onsuccess="onSignIn"></div>
+						<div class="g-signin2 mx-auto justify-content-center" data-onsuccess="onSignIn"></div>
 					  </form>
 				</div>
 	
@@ -74,7 +74,10 @@
 
 			<!-- NAV BAR -->
 			<div id="main-page" style="display: none;">
-				<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+				<nav class="shadow-sm navbar navbar-expand-lg navbar-light bg-light fixed-top">
+						<div class="navbar-nav">
+							<a class="nav-item nav-link active" href="#" onclick="homePageNews()">Home</a>
+						</div>
 						<div class="navbar-nav">
 							<a class="nav-item nav-link active" href="#" onclick="nationalNews()">National News</a>
 						</div>
@@ -93,7 +96,9 @@
 
 				<!-- CONTENT -->
 				<h1 id="content_title" class="row justify-content-md-center">Choose your news?</h1>
-				<div id="content" class="row justify-content-md-center">
+				<div class="container-fluid">
+					<div id="content" class="row justify-content-md-center d-flex flex-wrap">
+					</div>
 				</div>
 				<!-- CONTENT -->
 

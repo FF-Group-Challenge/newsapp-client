@@ -22,6 +22,7 @@ function landing () {
 $('#formregister').on('submit', e => {
     $('#errorlog').empty()
     e.preventDefault()
+    $('#errorlog').empty()
     const data = {
                     name: $('#namereg').val(),
                     email: $('#emailreg').val(),
@@ -36,10 +37,19 @@ $('#formregister').on('submit', e => {
         .done (msg => {
             localStorage.setItem('access_token', msg.access_token)
             homepage()
+            homePageNews()
         })
         .fail((xhr, textStatus) => {
             console.log(xhr)
-            $('#errorlog').append(`<small id="errmes" class="form-text text-danger mb-2 ml-1">${xhr.responseJSON.message}</small>`)
+            const errorlog = xhr
+                            .responseJSON
+                            .message
+                            
+            console.log(errorlog)
+            errorlog.forEach( el => {
+                console.log(el)
+                $('#errorlog').append(`<small id="errmes" class="form-text text-danger mb-2 ml-1">${el}</small>`)
+            })
         })
         .always(_=> {
             $('#namereg').val('')
@@ -51,6 +61,7 @@ $('#formregister').on('submit', e => {
 //login user
 $('#formlogin').on('submit', e => {
     e.preventDefault()
+    $('#error-log').empty()
     const data = {
                     email: $('#emaillog').val(),
                     password: $('#passwordlog').val()
@@ -64,6 +75,7 @@ $('#formlogin').on('submit', e => {
         .done (msg => {
             localStorage.setItem('access_token', msg.access_token)
             homepage()
+            homePageNews()
         })
         .fail((xhr, textStatus) => {
             $('#error-log').append(`<small id="errmes" class="form-text text-danger mb-2 ml-1">${xhr.responseJSON.message}</small>`)
@@ -95,6 +107,7 @@ function onSignIn(googleUser) {
             console.log(msg)
             localStorage.setItem('access_token', msg.access_token)
             homepage()
+            homePageNews()
         })
         .fail((xhr, textStatus) => {
             const errorLog = xhr

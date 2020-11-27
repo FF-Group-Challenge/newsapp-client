@@ -167,7 +167,8 @@ function spaceNews() {
 }
 
 function logout() {
-  localStorage.clear()
+	localStorage.clear()
+	signOut()
   $('#main-page').hide()
   $('#login-page').show()
   $('#formregister').hide()
